@@ -5,73 +5,120 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CookiesWeatherApp</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dhurjati&family=Montserrat:wght@100;600&family=Open+Sans:ital,wght@0,300;1,600&family=PT+Sans+Narrow&family=Poppins:ital,wght@1,100&family=Roboto:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dhurjati&family=Montserrat:wght@100;600&family=Open+Sans:ital,wght@0,300;1,600&family=PT+Sans+Narrow&family=Poppins:ital,wght@1,100&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <header>
-      <div>
-        <span class="current-day">Monday</span><span>,</span
-        ><span class="current-time">13:59</span>
-      </div>
-      <div class="city-form">
-        <input type="Search" placeholder="Enter City Name" required />
-        <input type="Submit" value="Search" />
-      </div>
-      <div class="city-weather">
-        <span class="smiley">☀️</span>
-        <span class="city-name">Geneva</span>
-        <span class="weather-description">Moderate Rain</span>
-        <span>Humidity:</span><span class="city-humidity">32</span>
-        <span>Wind:</span><span class="city-wind">100</span>
-      </div>
-      <div class="everyday-weather">
-        <div class="day">
-          <span>Mon</span>
-          <span class="high-temp">19</span><span>°C/</span
-          ><span class="low-temp">12</span><span>°C</span>
+    <div class="container">
+      <header>
+        <div class="align-center">
+          <span class="current-day text-large">Monday </span
+          ><span class="current-time text-large">13:59</span>
         </div>
-        <div class="day">
-          <span>Tue</span>
-          <span class="high-temp">19</span><span>°C/</span
-          ><span class="low-temp">12</span><span>°C</span>
+        <div class="common-margin align-center">
+          <input
+            id="search-name"
+            type="Search"
+            placeholder="Enter City Name"
+            required
+          />
+          <input id="submit-name" type="Submit" value="Search" />
         </div>
-        <div class="day">
-          <span>Wed</span>
-          <span class="high-temp">19</span><span>°C/</span
-          ><span class="low-temp">12</span><span>°C</span>
+        <div class="city-weather common-margin">
+          <div class="smiley text-large">☀️</div>
+          <div class="city-name text-large">Geneva</div>
+          <div class="text-large temp-large">
+            <span class="city-temp">24</span><span>°C</span>
+          </div>
+          <div class="text-grey common-margin">Moderate Rain</div>
+          <div class="common-margin">
+            <div>
+              <span>Humidity:</span
+              ><span class="city-humidity text-green">32</span
+              ><span class="text-green">%</span>
+            </div>
+            <div>
+              <span>Wind:</span><span class="city-wind text-green">100</span
+              ><span class="text-green">km/h</span>
+            </div>
+          </div>
         </div>
-        <div class="day">
-          <span>Thu</span>
-          <span class="high-temp">19</span><span>°C/</span
-          ><span class="low-temp">12</span><span>°C</span>
+        <div class="everyday-weather common-margin align-center">
+          <div class="day">
+            <div class="week">Mon</div>
+            <div class="temp-large">
+              <span class="high-temp">19</span><span>°C/</span
+              ><span class="low-temp">12</span><span>°C</span>
+            </div>
+          </div>
+          <div class="day">
+            <div class="week">Tue</div>
+            <div class="temp-large">
+              <span class="high-temp">19</span><span>°C/</span
+              ><span class="low-temp">12</span><span>°C</span>
+            </div>
+          </div>
+          <div class="day">
+            <div class="week">Wed</div>
+            <div class="temp-large">
+              <span class="high-temp">19</span><span>°C/</span
+              ><span class="low-temp">12</span><span>°C</span>
+            </div>
+          </div>
+          <div class="day">
+            <div class="week">Thu</div>
+            <div class="temp-large">
+              <span class="high-temp">19</span><span>°C/</span
+              ><span class="low-temp">12</span><span>°C</span>
+            </div>
+          </div>
+          <div class="day">
+            <div class="week">Fri</div>
+            <div class="temp-large">
+              <span class="high-temp">19</span><span>°C/</span
+              ><span class="low-temp">12</span><span>°C</span>
+            </div>
+          </div>
+          <div class="day">
+            <div class="week">Sat</div>
+            <div class="temp-large">
+              <span class="high-temp">19</span><span>°C/</span
+              ><span class="low-temp">12</span><span>°C</span>
+            </div>
+          </div>
+          <div class="day">
+            <div class="week">Sun</div>
+            <div class="temp-large">
+              <span class="high-temp">19</span><span>°C/</span
+              ><span class="low-temp">12</span><span>°C</span>
+            </div>
+          </div>
         </div>
-        <div class="day">
-          <span>Fri</span>
-          <span class="high-temp">19</span><span>°C/</span
-          ><span class="low-temp">12</span><span>°C</span>
-        </div>
-        <div class="day">
-          <span>Sat</span>
-          <span class="high-temp">19</span><span>°C/</span
-          ><span class="low-temp">12</span><span>°C</span>
-        </div>
-        <div class="day">
-          <span>Sun</span>
-          <span class="high-temp">19</span><span>°C/</span
-          ><span class="low-temp">12</span><span>°C</span>
-        </div>
-      </div>
-    </header>
+      </header>
 
-    <footer>
-      This project was coded by
-      <a href="https://github.com/echu-mohan" target="_blank">Lakshmi</a> and is
-      <a href="https://github.com/echu-mohan/cookies-weatherapp" target="_blank"
-        >open-sourced on GitHub</a
-      >
-      and hosted on
-      <a href="https://cookies-weatherapp.netlify.app/" target="_blank"
-        >Netlify</a
-      >
-    </footer>
+      <footer>
+        This project was coded by
+        <a href="https://github.com/echu-mohan" target="_blank">Lakshmi</a> and
+        is
+        <a
+          href="https://github.com/echu-mohan/cookies-weatherapp"
+          target="_blank"
+          >open-sourced on GitHub</a
+        >
+        and hosted on
+        <a href="https://cookies-weatherapp.netlify.app/" target="_blank"
+          >Netlify</a
+        >
+      </footer>
+    </div>
   </body>
 </html>

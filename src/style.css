@@ -1,0 +1,73 @@
+.text-large {
+  font-family: "Montserrat", sans-serif;
+  font-size: 50px;
+  line-height: 47px;
+}
+.common-margin {
+  margin-top: 30px;
+}
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.temp-large {
+  font-weight: 600;
+  color: #59888b;
+  padding: 10px 10px;
+  text-align: center;
+}
+.text-grey {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-style: italic;
+}
+.text-green {
+  color: #309aa1;
+}
+.day {
+  margin-left: 10px;
+  background-color: #d2dfdf;
+  border: 0.01rem solid #007afe;
+  border-radius: 5px;
+  text-align: center;
+}
+.week {
+  padding-top: 10px;
+}
+
+.city-weather {
+  text-align: center;
+}
+
+#search-name {
+  padding-left: 10px;
+  background-color: #f7f7fa;
+  border: 0.01rem solid;
+  border-radius: 5px;
+  width: 360px;
+  height: 30px;
+}
+#submit-name {
+  margin-left: 20px;
+  width: 100px;
+  border: 0.01rem;
+  border-radius: 0.5px;
+  background-color: #007afe;
+  color: white;
+  font-family: sans-serif;
+  height: 30px;
+}
+
+footer {
+  margin-top: 100px;
+  text-align: center;
+}
+body {
+  background: linear-gradient(180deg, #497d80 0%, rgba(217, 217, 217, 0) 100%);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
