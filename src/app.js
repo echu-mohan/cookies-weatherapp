@@ -4,7 +4,9 @@ let heading = document.querySelector(".city-name");
 
 const curDay = document.querySelector(".current-day");
 const curTime = document.querySelector(".current-time");
-
+const curDescription = document.querySelector("#description");
+const curHumidity = document.querySelector(".city-humidity");
+const curWind = document.querySelector(".city-wind");
 const now = new Date();
 let days = [
   "Sunday",
@@ -16,19 +18,31 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-let newTemp;
-curDay.innerHTML = day;
-if (now.getMinutes() <= 9) {
-  newTemp = `0${now.getMinutes()}`;
-} else {
-  newTemp = now.getMinutes();
-}
-curTime.innerHTML = `${now.getHours()}:${newTemp}`;
 
+function setDayandTime(days) {
+  let newTemp;
+  curDay.innerHTML = day;
+  if (now.getMinutes() <= 9) {
+    newTemp = `0${now.getMinutes()}`;
+  } else {
+    newTemp = now.getMinutes();
+  }
+  curTime.innerHTML = `${now.getHours()}:${newTemp}`;
+}
+function setDescription(resp) {
+  curDescription.innerHTML = resp.data.condition.description;
+}
+function setHumidityandWind(resp) {
+  curHumidity.innerHTML = `${resp.data.temperature.humidity}%`;
+  curWind.innerHTML = `${Math.round(resp.data.wind.speed)}km/h`;
+}
 function displayTemperature(response) {
+  console.log(response);
   let temp = document.querySelector(".city-temp");
   let temperature = response.data.temperature.current;
   temp.innerHTML = `${Math.round(temperature)}°C`;
+  setDescription(response);
+  setHumidityandWind(response);
 }
 function searchCity(city) {
   heading.innerHTML = city;
@@ -54,3 +68,4 @@ function submitForm(event) {
 form.addEventListener("submit", submitForm);
 
 searchCity("Geneva");
+setDayandTime(day);
