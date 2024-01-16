@@ -2,6 +2,29 @@ const form = document.querySelector("#search-form");
 let cityName = document.querySelector("#search-name");
 let heading = document.querySelector(".city-name");
 
+const curDay = document.querySelector(".current-day");
+const curTime = document.querySelector(".current-time");
+
+const now = new Date();
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+let newTemp;
+curDay.innerHTML = day;
+if (now.getMinutes() <= 9) {
+  newTemp = `0${now.getMinutes()}`;
+} else {
+  newTemp = now.getMinutes();
+}
+curTime.innerHTML = `${now.getHours()}:${newTemp}`;
+
 function displayTemperature(response) {
   let temp = document.querySelector(".city-temp");
   let temperature = response.data.temperature.current;
