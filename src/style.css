@@ -33,7 +33,8 @@
   text-align: center;
 }
 .week {
-  padding-top: 10px;
+  padding-top: 15px;
+  margin: 10px 10px;
 }
 
 .city-weather {
