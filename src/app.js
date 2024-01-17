@@ -58,7 +58,7 @@ function searchCity(city) {
   heading.innerHTML = city;
   let apiKey = "903fa0e63e42bda3e0tecffc708cobc2";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-  axios.get(apiUrl).then(displayTemperature);
+  return axios.get(apiUrl).then(displayTemperature);
 }
 
 function submitForm(event) {
@@ -77,5 +77,8 @@ function submitForm(event) {
 }
 form.addEventListener("submit", submitForm);
 
-searchCity("Geneva");
 setDayandTime(day);
+searchCity("Geneva").then(() => {
+  document.getElementsByClassName("city-weather")[0].style.visibility =
+    "visible";
+});

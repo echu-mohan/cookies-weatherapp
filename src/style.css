@@ -39,6 +39,11 @@
 
 .city-weather {
   text-align: center;
+  min-height: 340px;
+  visibility: hidden;
+}
+#smiley {
+  min-height: 104px;
 }
 
 #search-name {
