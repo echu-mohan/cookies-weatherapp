@@ -11,6 +11,13 @@
   justify-content: center;
   align-items: center;
 }
+.space-between {
+  justify-content: space-between;
+}
+.day-and-time {
+  display: flex;
+  gap: 12px;
+}
 .temp-large {
   font-weight: 600;
   color: #59888b;
@@ -37,15 +44,13 @@
 }
 
 .day {
-  margin-left: 10px;
   background-color: #d2dfdf;
   border: 0.01rem solid #007afe;
   border-radius: 5px;
   text-align: center;
+  padding: 8px 0px;
 }
 .week {
-  padding-top: 15px;
-  margin: 10px 10px;
   font-size: 20px;
 }
 .forecast-icon {
