@@ -54,29 +54,14 @@ function displayTemperature(response) {
   setHumidityandWind(response);
   setIcon(response);
 }
-function searchCity(city) {
-  heading.innerHTML = city;
+function getForecastData(city) {
   let apiKey = "903fa0e63e42bda3e0tecffc708cobc2";
-  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
-  return axios.get(apiUrl).then(displayTemperature);
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  console.log("hellooooo");
+  return axios.get(apiUrl).then(displayForecast);
 }
-
-function submitForm(event) {
-  event.preventDefault();
-  if (cityName.value) {
-    if (cityName.value.length <= 1) {
-      alert("Please enter a proper name of a place");
-      cityName.value = "";
-    } else {
-      searchCity(cityName.value);
-      cityName.value = "";
-    }
-  } else {
-    alert("Please enter a proper name of a place");
-  }
-}
-
-function displayForecast() {
+function displayForecast(response) {
+  console.log(response.data);
   const forescast = document.querySelector("#forecast");
   let forecastHTML = "";
   days.forEach(function (day) {
@@ -93,6 +78,29 @@ function displayForecast() {
     forescast.innerHTML = forecastHTML;
   });
 }
+function searchCity(city) {
+  heading.innerHTML = city;
+  let apiKey = "903fa0e63e42bda3e0tecffc708cobc2";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  return axios.get(apiUrl).then(displayTemperature);
+}
+
+function submitForm(event) {
+  event.preventDefault();
+  if (cityName.value) {
+    if (cityName.value.length <= 1) {
+      alert("Please enter a proper name of a place");
+      cityName.value = "";
+    } else {
+      searchCity(cityName.value);
+      getForecastData(cityName.value);
+      cityName.value = "";
+    }
+  } else {
+    alert("Please enter a proper name of a place");
+  }
+}
+
 form.addEventListener("submit", submitForm);
 
 setDayandTime(day);
@@ -100,4 +108,4 @@ searchCity("Geneva").then(() => {
   document.getElementsByClassName("city-weather")[0].style.visibility =
     "visible";
 });
-displayForecast();
+getForecastData("Geneva").then(() => {});
