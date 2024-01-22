@@ -75,6 +75,24 @@ function submitForm(event) {
     alert("Please enter a proper name of a place");
   }
 }
+
+function displayForecast() {
+  const forescast = document.querySelector("#forecast");
+  let forecastHTML = "";
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="day">
+            <div class="week">${day}</div>
+            <div class="forecast-icon"><img src="" alt="" /></div>
+            <div class="weather-forecast-temperatures">
+              <span class="high-temp text-dark-green">12° </span
+              ><span class="low-temp text-light-green">8°</span>
+            </div>
+          </div>`;
+    forescast.innerHTML = forecastHTML;
+  });
+}
 form.addEventListener("submit", submitForm);
 
 setDayandTime(day);
@@ -82,3 +100,4 @@ searchCity("Geneva").then(() => {
   document.getElementsByClassName("city-weather")[0].style.visibility =
     "visible";
 });
+displayForecast();
