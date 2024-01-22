@@ -50,7 +50,6 @@ function setHumidityandWind(response) {
   curWind.innerHTML = `${Math.round(response.data.wind.speed)}km/h`;
 }
 function displayTemperature(response) {
-  console.log(response);
   let temp = document.querySelector(".city-temp");
   let temperature = response.data.temperature.current;
   temp.innerHTML = `${Math.round(temperature)}°C`;
@@ -66,7 +65,6 @@ function formatDay(time) {
 function getForecastData(city) {
   let apiKey = "903fa0e63e42bda3e0tecffc708cobc2";
   let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
-  console.log("hellooooo");
   return axios.get(apiUrl).then(displayForecast);
 }
 function displayForecast(response) {
